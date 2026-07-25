@@ -2,6 +2,41 @@
 
 ---
 
+## ver.1.2.2 — Android 16 타겟 SDK 정책 대응
+
+**작업일**: 2026.07.25
+**Git Tag**: `v1.2.2`
+
+---
+
+### 구현 완료 항목
+
+#### 1. Google Play Android 16 정책 경고 대응
+- Play Console 정책 상태에서 `앱이 Android 16(API 수준 36) 이상을 타겟팅해야 함` 경고 확인
+- `compileSdk`: 35 → 36
+- `targetSdk`: 35 → 36
+- Manifest `tools:targetApi`: 34 → 36
+
+#### 2. Gradle 설정 정리
+- AGP 10에서 제거 예정인 compatibility flag 중 안전하게 제거 가능한 항목 정리
+- 현재 AGP/Kotlin 조합에서 필요한 `android.builtInKotlin=false`, `android.newDsl=false`는 유지
+- dependency constraint import 경고 대응을 위해 `android.dependency.useConstraints=false` 적용
+
+#### 3. 릴리즈 메타데이터 정리
+- Google Play 업로드용 앱 버전 갱신
+- `versionCode`: 6 → 7
+- `versionName`: `1.2.1` → `1.2.2`
+- Export payload 버전 문자열을 `1.2.2`로 동기화
+
+#### 4. 배포 검증
+- `assembleRelease` 성공
+- `bundleRelease` 성공
+- 기존 `rnote-release.jks` / `rnote_release` 키로 signed AAB 생성
+- Google Play Console에서 `7 (1.2.2)` App Bundle 정상 인식
+- Google Play Console 게시 개요에서 `7 (1.2.2) 전체 출시 시작` 검토 제출
+
+---
+
 ## ver.1.2.1 — SDK 경고 대응 및 릴리즈 정합성 보완
 
 **작업일**: 2026.06.08

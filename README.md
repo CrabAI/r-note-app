@@ -145,6 +145,16 @@ git clone https://github.com/creativeflow-labs/r-note-app.git
 
 This project follows [Semantic Versioning](https://semver.org/).
 
+### v1.2.2 - Android 16 Target SDK Maintenance Release
+
+> Tag: [`v1.2.2`](https://github.com/creativeflow-labs/r-note-app/releases/tag/v1.2.2) | Date: 2026.07.25
+
+- Updated Android target and compile SDK from `35` to `36` for Google Play Android 16 policy compliance
+- Reduced Android Gradle Plugin compatibility flags where safe while retaining settings required by the current AGP/Kotlin combination
+- Bumped Android release metadata for Google Play upload (`versionCode 7`, `versionName 1.2.2`)
+- Synced export payload version string to `1.2.2`
+- No user-facing feature changes in this maintenance release
+
 ### v1.2.1 - SDK Maintenance Release
 
 > Tag: [`v1.2.1`](https://github.com/creativeflow-labs/r-note-app/releases/tag/v1.2.1) | Date: 2026.06.08
